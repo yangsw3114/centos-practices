@@ -1,14 +1,14 @@
 0. 작업은 /root
 
 1. tomcat8 다운로드
-   # wget https://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.65/bin/apache-tomcat-8.5.65.tar.gz
+   # wget https://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.71/bin/apache-tomcat-8.5.71-deployer.tar.gz
 
 2. 압축 풀기
-   # tar xvfz apache-tomcat-8.5.65.tar.gz
+   # tar xvfz apache-tomcat-8.5.6ja5.tar.gz
 
 3. 설치
-   # mv apache-tomcat-8.5.65 /usr/local/douzone/tomcat8.5
-   # ln -s /usr/local/douzone/tomcat8.5 /usr/local/douzone/tomcat
+   # mv apache-tomcat-8.5.65 /usr/local/douzone2021/tomcat8.5
+   # ln -s /usr/local/douzone2021/tomcat8.5 /usr/local/douzone2021/tomcat
 
 4. 설정(/etc/profile, 생략)
 
@@ -24,10 +24,10 @@
    # ps -ef | grep java
 
 7. 브라우저로 접근 하기
-   http://192.168.80.131:8080
+   http://192.168.80.131:8080  vm에서 포트포워딩하나 생성 127.0.0.1 8080 10.0.2.15 8080
 
 8. 중지 시키기
-   # /usr/local/douzone/tomcat/bin/catalina.sh stop
+   # /usr/local/douzone2021/tomcat/bin/catalina.sh stop
 
 9. 서비스 등록 하기
    /usr/lib/systemd/system/tomcat.service 파일 생성

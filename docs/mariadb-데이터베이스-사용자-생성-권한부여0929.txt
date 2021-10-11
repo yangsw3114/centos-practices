@@ -1,0 +1,52 @@
+1. (Relation)DB: 개요
+2. SQL - DDL, DCL, DML 
+        (DA) (DBA) (DB Develope, CRUD)
+3. Data Design, DA, DB Scheme(entity, ERD Logical) -> table(Physical)
+   : 정규화(Normalization)
+4. DB Programming(c, c++, java(JDBC), python, JavaScript, PHP.......) 
+
+
+====================================================================
+# mysql -u root -p  (DBA 권한으로 접속)
+
+1. database 생성
+MariaDB [none]> create database webdb;
+
+show databases; //디비 생성확인
+
+2-1. user 생성
+MariaDB [none]> create user 'webdb'@'localhost' identified by 'webdb'; 
+//호스트가 localhost(127.0.0.1)인 webdb유저 생성 비번은 webdb
+
+3-1. 권한 부여
+MariaDB [none]> grant all privileges on webdb.* to 'webdb'@'localhost';
+
+4-1. 새 변경사항 적용
+MariaDB [none]> flush privileges;
+
+5-1. 테스트
+# mysql -u webdb -D webdb -p   //-u는 user네임 -D는 데이터베이스 -p는 패스워드
+=====================================================================
+2-2. user 생성
+MariaDB [none]> create user 'webdb'@'10.0.2.2' identified by 'webdb';
+특정IP?? 또는 게이트웨이 넘버일듯  정확히 모름..
+10.0.2.2는 게이트웨이넘버인데 who명령어를 통해 확인가능
+//강사님은 "특정 IP(windows 192.168.80.31)의 접속 계정 webdb 생성" 이렇게 작성해둠
+ 192.~~는 예시임
+
+
+3-2. 권한 부여
+MariaDB [none]> grant all privileges on webdb.* to 'webdb'@'10.0.2.2';
+
+4-2. 새 변경사항 적용
+MariaDB [none]> flush privileges;
+
+5-2. Windows의 Workbench 에서 테스트 
+(가상머신(VM) 네트워크에서 네트워크 포트포워딩으로 port번호 3306 ip 127.0.0.1을 추가시키고
+워크벤치의 Mysql Connections를 통해 추가하여 연동한다 정상작동 확인가능)
+
+
+
+
+
+

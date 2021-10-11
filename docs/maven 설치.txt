@@ -6,14 +6,13 @@
    
 
 2. 압축 풀기
-   # wget apache-maven-3.8.1-bin.tar.gz
+   # tar xvfz apache-maven-3.8.1-bin.tar.gz
    
 3. 설치
    # mv apache-maven-3.8.1 /usr/local/douzone/maven3.8
-   # ln -s /usr/local/douzone2021/maven3.8 /usr/local/douzone/maven
+   # ln -s /usr/local/douzone/maven3.8 /usr/local/douzone/maven
 
 4. 설정(/etc/profile)
 
 # maven
 export PATH=$PATH:/usr/local/douzone/maven/bin
- 
